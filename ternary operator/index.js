@@ -8,23 +8,22 @@
 import inquirer from "inquirer";
 const numbers = await inquirer.prompt([{
         name: "num1",
-        type: "number",
+        type: "input",
         message: "Enter your number",
-        choices: ["2,4,6,8"]
     }]);
-numbers.num1 === 2 ?
+numbers.num1 % 2 === 0 ?
     console.log("THIS IS EVEN NUMBER") :
-    numbers.num1 === 4 ?
-        console.log("THIS IS EVEN NUMBER") :
-        numbers.num1 === 6 ?
-            console.log("THIS IS EVEN NUMBER") :
-            numbers.num1 === 6 ?
-                console.log("THIS IS EVEN NUMBER") :
-                numbers.num1 === 8 ?
-                    console.log("THIS IS EVEN NUMBER") :
-                    numbers.num1 % 3 === 0 ?
-                        console.log("THIS IS ODD NUMBERS") :
-                        console.log("INVALID NUMBER"); // WORK AS AN ELSE
+    // numbers.num1 === 4 ?
+    // console.log("THIS IS EVEN NUMBER"):
+    // numbers.num1 === 6 ? 
+    // console.log("THIS IS EVEN NUMBER"):
+    // numbers.num1 === 6 ?
+    // console.log("THIS IS EVEN NUMBER"):
+    // numbers.num1 === 8 ?
+    // console.log("THIS IS EVEN NUMBER"):
+    numbers.num1 % 2 === 1 ?
+        console.log("THIS IS ODD NUMBERS") :
+        console.log("INVALID NUMBER"); // WORK AS AN ELSE
 // QUESTION NO 2
 // Determine Age Group
 // - Write a program that prompts the user to enter their age.
@@ -37,8 +36,8 @@ const age = await inquirer.prompt([{
         type: "number",
         message: "ENTER YOUR AGE"
     }]);
-age.answer <= 13 ? console.log("you are child") :
-    age.answer < 19 ? console.log("YOU ARE TEENAGER") :
+age.answer < 13 && age.answer > 0 ? console.log("you are child") :
+    age.answer >= 13 && age.answer <= 19 ? console.log("YOU ARE TEENAGER") :
         age.answer >= 20 ? console.log("YOU ARE ADULT") :
-            age.answer % 0 === 0 ? console.log("PRINT APPRORIATE AGE") :
+            age.answer === 0 ? console.log("PRINT APPRORIATE AGE") :
                 console.log("INVALID AGE");

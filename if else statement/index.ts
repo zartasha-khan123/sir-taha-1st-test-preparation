@@ -10,7 +10,7 @@
 
 import inquirer from "inquirer";
 
-const person = await inquirer.prompt([{
+let person = await inquirer.prompt([{
 
    name: "question1",
    type:"string",
@@ -37,7 +37,7 @@ else {
 // - Print "You are not eligible to vote." if they are younger than 18.
 // - Additionally, handle cases where the age entered is less than 0 and print "Please enter a valid age."
 
-const person_age = await inquirer.prompt(
+let person_age = await inquirer.prompt(
     [
         { 
             name: "persons_age",
@@ -52,14 +52,43 @@ if (person_age.persons_age >= 18){
     console.log("You are eligible to vote");
 }
 
-else if ( person_age.persons_age < 18 ){
+else if ( person_age.persons_age < 18 && person_age.persons_age >=0 ){
     console.log("You are not eligible to vote");
 }
 
-else if ( person_age.persons_age <=0 ){
-    console.log("Enter a valid number");
-}
+
 else {
     console.log("you enter invalid numbers");
 }
 
+
+
+
+
+
+//sir ke trha krna ho tw
+
+//qno1
+let age = await inquirer.prompt(
+    [
+        { 
+            name: "persons_age",
+            type:"number",
+            message:"Enter your age"
+
+        }
+    ]
+);
+
+if (age.persons_age ===0){
+    console.log("zero ");
+}
+
+
+if (age.persons_age >0){
+    console.log("positive");
+}
+
+if (age.persons_age <0){
+    console.log("negative");
+}

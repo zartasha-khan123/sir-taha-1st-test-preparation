@@ -11,8 +11,9 @@ import inquirer from "inquirer";
 const weekDays = await inquirer.prompt([{
 
      name:"answer1",
-     type:"string",
-     message:"Enter a day of the week"
+     type:"list",
+     message:"Enter a day of the week",
+     choices:['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 
 }]);
 
@@ -74,26 +75,26 @@ const fruits_names = await inquirer.prompt({
      name : "answer",
      type : "list",
      message:"Enter your fruit name",
-     choices:["Apple,Banana,Cherry"]
+     choices:['Apple','Banana','Cherry','Orange']
 
 });
 
 
  switch (fruits_names.answer){
 
-     case "apple":
+     case "Apple":
         console.log("Apple! \n The price per pound for apple is 5");
         break;
 
-        case "banana":
+        case "Banana":
             console.log("banana! \n The price per pound for banana is 2");
             break;
 
-            case "cheery":
+            case "Cheery":
                 console.log("cheery! \n The price of cheery is 4");
                 break;
 
-                case "orange":
+                case "Orange":
                     console.log("orange! \n The price of orange is 1.5");
                     break;
 
